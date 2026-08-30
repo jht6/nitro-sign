@@ -1,0 +1,11 @@
+# Nitro Enclave 镜像：运行静态编译的 enclave HTTP server。
+#
+# 构建前需先通过 Makefile 的 `enclave` 目标生成 musl 静态二进制并拷贝到
+# 项目根目录的 `./enclave`（参见 Makefile）。
+#
+#   docker build -t nitro-sign-enclave -f Dockerfile.enclave .
+#   nitro-cli build-enclave --docker-uri nitro-sign-enclave --output-file enclave.eif
+
+FROM alpine:latest
+COPY enclave .
+CMD ["./enclave"]
