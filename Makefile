@@ -29,7 +29,7 @@ eif: build-enclave
 
 # 运行 enclave（2 vCPU / 256 MiB，可按需调整）
 run-enclave: eif
-	nitro-cli run-enclave --eif-path $(EIF) --cpu-count 2 --memory 256
+	nitro-cli run-enclave --eif-path $(EIF) --cpu-count 2 --memory 256 --enclave-cid 10
 
 clean:
 	cargo clean
